@@ -8,8 +8,8 @@ src = "nginx.tmpl"
 dest = "/etc/nginx/sites-enabled/app.conf"
 
 # The etcd keys or directory to watch.  This is where the information to fill in
-# the template will come from.
-keys = [ "/services/apache" ]
+# the template will come from. (originally for apache)
+# keys = [ "/services/apache" ]
 
 # File ownership and mode information
 owner = "root"
