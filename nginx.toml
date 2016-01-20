@@ -5,11 +5,14 @@
 src = "nginx.tmpl"
 
 # The location to place the rendered configuration file
-dest = "/etc/nginx/sites-enabled/app.conf"
+#Original: dest = "/etc/nginx/sites-enabled/app.conf"
+#Modified destination below:
+dest = "/etc/nginx/nginx.conf"
 
 # The etcd keys or directory to watch.  This is where the information to fill in
 # the template will come from. (originally for apache)
 # keys = [ "/services/apache" ]
+keys = [ "/services/todo"]
 
 # File ownership and mode information
 owner = "root"
