@@ -1,18 +1,28 @@
-upstream todo_pool {
+
+events {
+	worker_connections 1024;
+	multi_accept on;
+}
+
+log_format upstreamlog '[$time_local] $remote_addr passed to: $upstream_addr: $request Upstream Response Time: $upstream_response_time Request time: $request_time';
+
+upstream todo_pool { round-robin;
 {{ range getvs "/services/todo/*" }}
     server {{ . }};
 {{ end }}
 }
-
 server {
     listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
-
+    #listen [::]:80 default_server ipv6only=on;
+    
+    #access logging
     access_log /var/log/nginx/access.log upstreamlog;
 
+    #error logging
+    error_log /var/log/nginx-error.log;
 
     location / {
-        proxy_pass http://apache_pool;
+        proxy_pass http://todo/;
         #proxy_redirect off;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
