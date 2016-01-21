@@ -1,7 +1,8 @@
 FROM nginx
 
+RUN chmod +x confd
 COPY confd /usr/local/bin/ 
-RUN chmod +x /usr/local/bin/confd && mkdir -p /etc/confd/ 
+RUN mkdir -p /etc/confd/ 
 
 COPY nginx.toml /etc/confd/conf.d/nginx.toml
 COPY nginx.tmpl /etc/confd/templates/nginx.tmpl
