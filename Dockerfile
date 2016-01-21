@@ -1,10 +1,10 @@
 FROM nginx
 
-RUN mkdir -p /etc/confd/ && cd /usr/local/bin && 
-  && chmod +x confd
+COPY confd /usr/local/bin/ 
+RUN chmod +x /usr/local/bin/confd && mkdir -p /etc/confd/ 
 
 COPY nginx.toml /etc/confd/conf.d/nginx.toml
-COPY templates/nginx.tmpl /etc/confd/templates/nginx.tmpl
+COPY nginx.tmpl /etc/confd/templates/nginx.tmpl
 COPY confd-watch /usr/local/bin/confd-watch
 
 RUN rm -rf /etc/nginx/nginx.conf
