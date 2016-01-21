@@ -1,6 +1,6 @@
 FROM nginx
 
-RUN cd /usr/local/bin \
+RUN mkdir -p /etc/confd/ && cd /usr/local/bin && 
   && chmod +x confd
 
 COPY nginx.toml /etc/confd/conf.d/nginx.toml
