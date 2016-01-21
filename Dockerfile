@@ -1,6 +1,6 @@
 FROM nginx
 
-RUN ./confd/install
+#RUN ./confd/install
 RUN mkdir -p /etc/confd/ 
 
 COPY nginx.toml /etc/confd/conf.d/nginx.toml
