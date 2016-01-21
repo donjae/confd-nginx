@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 BIN_DIR=${BIN_DIR:-/usr/local/bin}
 INSTALL=install
 
