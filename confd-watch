@@ -1,4 +1,5 @@
 #!/bin/bash
+pwd
 ./confd-nginx/confd/install
 set -eo pipefail
 
