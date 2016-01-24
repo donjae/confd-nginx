@@ -1,7 +1,7 @@
 FROM nginx
 
-#RUN ./confd/install
-CMD [/confd/install]
+RUN cd confd/src/github.com/kelseyhightower/confd/ \
+  && GOPATH=/Users/kelseyhightower/confd/vendor:/Users/kelseyhightower/confd go build .
 #RUN mkdir -p /etc/confd/ 
 
 COPY nginx.toml /etc/confd/conf.d/nginx.toml
