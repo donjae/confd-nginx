@@ -11,4 +11,4 @@ RUN chmod +x /usr/local/bin/confd-watch
 
 EXPOSE 80
 
-CMD ["confd/install","/usr/local/bin/confd-watch"]
+CMD ["install","/usr/local/bin/confd-watch"]
