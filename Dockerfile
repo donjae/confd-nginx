@@ -2,7 +2,7 @@ FROM nginx
 
 #RUN ./confd/install
 CMD [/confd/install]
-RUN mkdir -p /etc/confd/ 
+#RUN mkdir -p /etc/confd/ 
 
 COPY nginx.toml /etc/confd/conf.d/nginx.toml
 COPY nginx.tmpl /etc/confd/templates/nginx.tmpl
