@@ -1,5 +1,5 @@
 #!/bin/bash
-./install
+./confd/install
 set -eo pipefail
 
 export ETCD_PORT=${ETCD_PORT:-4001}
