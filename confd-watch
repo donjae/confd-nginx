@@ -1,6 +1,6 @@
 #!/bin/bash
-pwd
-./confd-nginx/confd/install
+#pwd
+#./confd-nginx/confd/install
 set -eo pipefail
 
 export ETCD_PORT=${ETCD_PORT:-4001}
